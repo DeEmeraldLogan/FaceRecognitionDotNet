@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+    <TargetFramework>net5.0</TargetFramework>
     <Authors>Takuya Takeuchi</Authors>
     <Copyright>© Takuya Takeuchi 2018-2021</Copyright>
     <Company />
@@ -38,17 +38,6 @@
     <DefineConstants>$(DefineConstants);DOTNETCORE</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup Condition="!$(TargetFramework.Contains('netstandard')) And !$(TargetFramework.Contains('netcoreapp')) ">
-    <Reference Include="System.Drawing" />
-    <Reference Include="System" />
-  </ItemGroup>
-
-  <ItemGroup Condition="$(TargetFramework.Contains('netstandard')) Or $(TargetFramework.Contains('netcoreapp')) ">
-    <PackageReference Include="System.Drawing.Common">
-      <Version>5.0.1</Version>
-    </PackageReference>
-  </ItemGroup>
-
   <ItemGroup>
     <None Include="..\..\LICENSE.txt">
       <Pack>True</Pack>
@@ -57,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="5.0.1" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
   </ItemGroup>
 
 </Project>
